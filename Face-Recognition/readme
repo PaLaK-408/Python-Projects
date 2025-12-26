@@ -1,0 +1,59 @@
+🔍 About My Face Recognition Tool
+📌 Project Overview
+
+The Face Recognition Tool is a Python-based computer vision application that automatically detects and recognizes human faces using a webcam.
+It compares live video frames with pre-stored known faces and identifies the person in real time.
+
+🎯 Objectives
+
+Detect human faces from live camera feed
+
+Recognize known individuals accurately
+
+Display name on detected face
+
+(Optional) Mark attendance with date & time
+
+🧠 Technologies Used
+
+Python
+
+OpenCV (cv2) – for video capture & image processing
+
+face_recognition library – for face detection & encoding
+
+NumPy – numerical operations
+
+CSV / Datetime – attendance logging
+
+⚙️ How It Works (Step-by-Step)
+
+Load Known Faces
+
+Images stored in Faces/ folder
+
+Convert each face image into a 128-dimensional encoding
+
+Start Webcam
+
+Capture real-time video frames using OpenCV
+
+Face Detection
+
+Detect faces in each frame
+
+Resize frame for faster processing
+
+Face Recognition
+
+Compare live face encodings with known encodings
+
+If match found → display person’s name
+
+Else → mark as Unknown
+
+Attendance (if enabled)
+
+Name + date + time saved in a .csv file
+
+One entry per person per day
