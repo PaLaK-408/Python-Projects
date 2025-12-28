@@ -9,7 +9,7 @@ CSV file.
 
 How It Works
 
-1. Loads face images from dataset folder
+1. Loads face images from dataset folder (Faces)
 2. Trains LBPH face recognizer
 3. Captures webcam feed
 4. Detects faces using Haar Cascade
