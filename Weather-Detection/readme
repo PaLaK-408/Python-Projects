@@ -1,1 +1,115 @@
+🌦️ Weather Voice Assistant using Python
 
+This project fetches real-time weather information for a given city using a Weather API and announces the temperature using Windows Text-to-Speech (SAPI).
+
+🚀 Features
+
+Takes city name as user input
+
+Fetches real-time temperature data
+
+Displays temperature in Celsius
+
+Speaks the weather information aloud
+
+Simple and beginner-friendly
+
+🛠️ Technologies Used
+
+Python 3
+
+Requests (API calls)
+
+JSON
+
+pywin32 (win32com.client) for text-to-speech
+
+WeatherAPI
+
+⚠️ Works on Windows only (uses SAPI voice engine)
+
+📂 Project Structure
+Weather-Voice-Assistant/
+│
+├── weather_speaker.py
+└── README.md
+
+📜 How It Works
+
+User enters a city name
+
+Program sends request to Weather API
+
+Temperature is extracted from JSON response
+
+Temperature is printed on screen
+
+Computer speaks the weather information
+
+▶️ How to Run the Project
+1️⃣ Install Required Libraries
+pip install requests pywin32
+
+2️⃣ Get Weather API Key
+
+Sign up at weatherapi.com
+
+Replace YOUR_API_KEY in the code
+
+url = f"https://api.weatherapi.com/v1/current.json?key=YOUR_API_KEY&q={city}"
+
+3️⃣ Run the Script
+python weather_speaker.py
+
+🧠 Sample Output
+Enter the name of the city: Delhi
+Temperature in Delhi: 32°C
+
+
+🔊 “The current weather in Delhi is 32 degrees Celsius”
+
+🧠 Core Code Logic
+wdic = json.loads(r.text)
+w = wdic["current"]["temp_c"]
+
+speak = speech.Dispatch("SAPI.SpVoice")
+text = f"The current weather in {city} is {w} degrees Celsius"
+speak.Speak(text)
+
+📌 Applications
+
+Voice-based weather assistants
+
+Smart desktop assistants
+
+Accessibility tools
+
+IoT weather announcements
+
+⚠️ Limitations
+
+Windows-only
+
+Requires internet connection
+
+API key exposure (should use environment variables)
+
+🔮 Future Improvements
+
+Add weather conditions (rain, humidity, wind)
+
+GUI interface
+
+Error handling for invalid city
+
+Cross-platform TTS (pyttsx3)
+
+Voice input support
+
+👤 Author
+
+Palak
+
+⭐ Support
+
+If you like this project, don’t forget to ⭐ the GitHub repository!
