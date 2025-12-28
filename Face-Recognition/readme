@@ -1,31 +1,131 @@
-Face Recognition Attendance System (OpenCV – LBPH)
+🧑‍💻 Face Recognition Attendance System (Python)
 
-Project Overview
+This project implements a real-time face recognition–based attendance system using Python, OpenCV, and the face_recognition library.
+It automatically detects faces from a webcam, recognizes known individuals, and records their attendance in a CSV file with date and time.
 
-This project is a Face Recognition based Attendance System developed using Python and
-OpenCV. It detects and recognizes faces using the LBPH algorithm and records attendance in a
-CSV file.
+🚀 Features
+
+Real-time face detection using webcam
+
+Face recognition using pre-stored images
+
+Automatic attendance marking
+
+Attendance saved in date-wise CSV file
+
+Each person is marked only once per session
+
+Displays bounding box and name on detected face
+
+🛠️ Technologies Used
+
+Python 3
+
+OpenCV (cv2)
+
+face_recognition
+
+NumPy
+
+CSV
+
+Datetime
+
+📂 Project Structure
+Face-Recognition-Attendance/
+│
+├── Faces/
+│   ├── ravi.jpg
+│   ├── reena.jpg
+│   └── aman.jpg
+│
+├── 2025-01-01.csv        # Auto-generated attendance file
+├── attendance.py         # Main Python script
+└── README.md             # Documentation
+
+📜 How the System Works
+
+Loads known face images from the Faces/ folder
+
+Encodes faces using face_recognition
+
+Captures live video from webcam
+
+Matches detected faces with known encodings
+
+Marks attendance with name and time
+
+Saves attendance in a CSV file named with the current date
+
+▶️ How to Run the Project
+1️⃣ Install Required Libraries
+pip install opencv-python face-recognition numpy
 
 
-How It Works
+⚠️ On Windows, you may need CMake and Visual Studio Build Tools for dlib.
 
-1. Loads face images from dataset folder (Faces)
-2. Trains LBPH face recognizer
-3. Captures webcam feed
-4. Detects faces using Haar Cascade
-5. Recognizes faces and marks attendance
+2️⃣ Add Face Images
+
+Create a folder named Faces
+
+Add clear, front-facing images
+
+Name images properly (e.g., ravi.jpg, reena.jpg)
+
+3️⃣ Run the Script
+python attendance.py
 
 
-Technologies Used
+Press q to stop the program.
 
-Python, OpenCV, NumPy, CSV, Datetime, OS
-Requirements
-opencv-python
-opencv-contrib-python
-numpy
+🧠 Core Code Logic (Snippet)
+matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
+best_match_index = np.argmin(face_distances)
 
-Output
-Attendance is saved in a date-wise CSV file with name and time.
+📌 Output
 
-Author
+Live webcam window with face detection
+
+Attendance saved as:
+
+YYYY-MM-DD.csv
+Name, Time
+ravi, 10:12:45
+reena, 10:13:02
+
+📌 Applications
+
+Classroom attendance system
+
+Office employee attendance
+
+Secure access control systems
+
+Smart surveillance systems
+
+⚠️ Limitations
+
+Requires good lighting conditions
+
+Accuracy depends on image quality
+
+Not suitable for large crowds without optimization
+
+🔮 Future Improvements
+
+Add database support (MySQL / Firebase)
+
+Mask detection support
+
+GUI using Tkinter / PyQt
+
+Cloud-based attendance storage
+
+👤 Author
+
 Palak
+
+⭐ Support
+
+If you like this project, please ⭐ the repository on GitHub.
