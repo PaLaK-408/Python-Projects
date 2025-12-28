@@ -1,0 +1,85 @@
+📸 Image Resizing using OpenCV (Python)
+
+This project demonstrates how to resize an image using OpenCV in Python by a given percentage and save the resized image to a new file.
+
+🚀 Features
+
+Reads an image using OpenCV
+
+Resizes the image by a specified scale percentage
+
+Uses efficient interpolation (INTER_AREA) for resizing
+
+Saves the resized image in a new format (.jpg / .png)
+
+Beginner-friendly and easy to understand
+
+🛠️ Technologies Used
+
+Python 3
+
+OpenCV (cv2)
+
+📂 Project Structure
+Image-Resizing-OpenCV/
+│
+├── pic.jpg          # Input image
+├── output.jpg       # Resized output image
+├── newImage.png     # Resized output image (PNG)
+├── resize.py        # Python script
+└── README.md        # Project documentation
+
+📜 Code Explanation (Summary)
+
+Load an image using cv2.imread()
+
+Define a scaling percentage (e.g., 30%)
+
+Calculate new width and height
+
+Resize the image using cv2.resize()
+
+Save the resized image using cv2.imwrite()
+
+▶️ How to Run the Project
+1️⃣ Install OpenCV
+pip install opencv-python
+
+2️⃣ Run the Python Script
+python resize.py
+
+
+Make sure pic.jpg is present in the same directory.
+
+🧠 Sample Code
+import cv2
+
+src = cv2.imread("pic.jpg", cv2.IMREAD_UNCHANGED)
+
+scale_percent = 30
+width = int(src.shape[1] * scale_percent / 100)
+height = int(src.shape[0] * scale_percent / 100)
+
+dsize = (width, height)
+output = cv2.resize(src, dsize, interpolation=cv2.INTER_AREA)
+
+cv2.imwrite("output.jpg", output)
+cv2.waitKey(0)
+
+📌 Applications
+
+Image preprocessing
+
+Computer Vision projects
+
+Dataset optimization
+
+Reducing image size for faster processing
+
+👤 Author
+
+Palak
+
+⭐ Support
+
+If you find this project helpful, please ⭐ the repository on GitHub.
