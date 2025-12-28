@@ -1,0 +1,84 @@
+📄 PDF Merger using PyPDF2 (Python)
+
+This project demonstrates how to merge multiple PDF files into a single PDF using Python and the PyPDF2 library.
+
+🚀 Features
+
+Merge multiple PDF files into one
+
+Uses PyPDF2.PdfMerger
+
+Simple and beginner-friendly Python script
+
+Fast and lightweight solution
+
+🛠️ Technologies Used
+
+Python 3
+
+PyPDF2
+
+📂 Project Structure
+PDF-Merger/
+│
+├── 1.pdf           # Input PDF
+├── 2.pdf           # Input PDF
+├── 3.pdf           # Input PDF
+├── merge_pdf.py    # Python script
+├── merged.pdf      # Output merged PDF
+└── README.md       # Documentation
+
+📜 Code Explanation (Brief)
+
+Import the PyPDF2 library
+
+Store PDF filenames in a list
+
+Create a PdfMerger object
+
+Append each PDF file to the merger
+
+Write the merged output to merged.pdf
+
+▶️ How to Run the Project
+1️⃣ Install PyPDF2
+pip install PyPDF2
+
+2️⃣ Run the Script
+python merge_pdf.py
+
+
+Make sure all PDF files (1.pdf, 2.pdf, 3.pdf) are in the same directory.
+
+🧠 Sample Code
+import PyPDF2
+
+pdfiles = ["1.pdf", "2.pdf", "3.pdf"]
+merger = PyPDF2.PdfMerger()
+
+for filename in pdfiles:
+    with open(filename, "rb") as pdfFile:
+        pdfReader = PyPDF2.PdfReader(pdfFile)
+        merger.append(pdfReader)
+
+merger.write("merged.pdf")
+
+📌 Applications
+
+Combining assignment PDFs
+
+Merging reports or notes
+
+Office & academic document handling
+
+Automation of PDF tasks
+
+⚠️ Note
+
+Ensure input PDFs are not password protected
+
+File names must match exactly
+
+👤 Author
+
+Ravinder Singh
