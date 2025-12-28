@@ -1,59 +1,31 @@
-🔍 About My Face Recognition Tool
-📌 Project Overview
+Face Recognition Attendance System (OpenCV – LBPH)
 
-The Face Recognition Tool is a Python-based computer vision application that automatically detects and recognizes human faces using a webcam.
-It compares live video frames with pre-stored known faces and identifies the person in real time.
+Project Overview
 
-🎯 Objectives
+This project is a Face Recognition based Attendance System developed using Python and
+OpenCV. It detects and recognizes faces using the LBPH algorithm and records attendance in a
+CSV file.
 
-Detect human faces from live camera feed
 
-Recognize known individuals accurately
+How It Works
 
-Display name on detected face
+1. Loads face images from dataset folder
+2. Trains LBPH face recognizer
+3. Captures webcam feed
+4. Detects faces using Haar Cascade
+5. Recognizes faces and marks attendance
 
-(Optional) Mark attendance with date & time
 
-🧠 Technologies Used
+Technologies Used
 
-Python
+Python, OpenCV, NumPy, CSV, Datetime, OS
+Requirements
+opencv-python
+opencv-contrib-python
+numpy
 
-OpenCV (cv2) – for video capture & image processing
+Output
+Attendance is saved in a date-wise CSV file with name and time.
 
-face_recognition library – for face detection & encoding
-
-NumPy – numerical operations
-
-CSV / Datetime – attendance logging
-
-⚙️ How It Works (Step-by-Step)
-
-Load Known Faces
-
-Images stored in Faces/ folder
-
-Convert each face image into a 128-dimensional encoding
-
-Start Webcam
-
-Capture real-time video frames using OpenCV
-
-Face Detection
-
-Detect faces in each frame
-
-Resize frame for faster processing
-
-Face Recognition
-
-Compare live face encodings with known encodings
-
-If match found → display person’s name
-
-Else → mark as Unknown
-
-Attendance (if enabled)
-
-Name + date + time saved in a .csv file
-
-One entry per person per day
+Author
+Palak
