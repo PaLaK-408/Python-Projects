@@ -1,0 +1,123 @@
+🗣️ RoboSpeaker 1.1 – Text to Speech using Python
+
+RoboSpeaker is a simple Text-to-Speech (TTS) program built using Python and Windows PowerShell.
+It converts user-entered text into speech using the System.Speech API.
+
+🚀 Features
+
+Converts text input into spoken voice
+
+Continuous input using a loop
+
+Exit command with farewell message
+
+Uses built-in Windows speech engine
+
+Lightweight & beginner-friendly
+
+🛠️ Technologies Used
+
+Python 3
+
+Windows PowerShell
+
+System.Speech.Synthesis (Windows API)
+
+⚠️ Works on Windows only
+
+📂 Project Structure
+RoboSpeaker/
+│
+├── robospeaker.py
+└── README.md
+
+📜 How It Works
+
+User enters text in the terminal
+
+Python sends the text to PowerShell
+
+PowerShell uses System.Speech.Synthesis
+
+Computer speaks the entered text
+
+Typing exit stops the program
+
+▶️ How to Run the Project
+1️⃣ Ensure Python is Installed
+
+Check:
+
+python --version
+
+2️⃣ Run the Script
+python robospeaker.py
+
+3️⃣ Usage
+Enter what you want to speak: Hello World
+Enter what you want to speak: How are you?
+Enter what you want to speak: exit
+
+🧠 Sample Code
+import os
+
+print("Welcome to RoboSpeaker 1.1. Created by Palak Sindhi")
+
+while True:
+    x = input("Enter what you want to speak (type 'exit' to quit): ")
+
+    if x.lower() == "exit":
+        os.system(
+            'powershell -Command '
+            '"Add-Type -AssemblyName System.Speech; '
+            '(New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('
+            '\'byee byee dear friend\''
+            ')"'
+        )
+        break
+
+    os.system(
+        'powershell -Command '
+        '"Add-Type -AssemblyName System.Speech; '
+        '(New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('
+        f'\\\"{x}\\\"'
+        ')"'
+    )
+
+📌 Applications
+
+Assistive technology
+
+Voice-based learning tools
+
+Accessibility tools
+
+AI voice assistants (basic prototype)
+
+⚠️ Limitations
+
+Windows-only (uses PowerShell)
+
+No voice customization
+
+No GUI
+
+🔮 Future Improvements
+
+Add voice selection (male/female)
+
+Adjust speech rate & volume
+
+Cross-platform support
+
+GUI using Tkinter
+
+Replace PowerShell with pyttsx3
+
+👤 Author
+
+Palak
+
+⭐ Support
+
+If you find this project helpful, don’t forget to ⭐ the repository on GitHub!
