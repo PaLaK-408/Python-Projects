@@ -1,1 +1,178 @@
+# 🏋️‍♂️ GYM-Trainer – AI-Based Fitness Trainer
 
+GYM-Trainer is an **AI-powered desktop fitness training application** built using **Python**, **OpenCV**, and **pose estimation**. It helps users perform workouts correctly by tracking body posture in real time through a webcam and counting repetitions automatically — **no gym equipment required**.
+
+This project is ideal for:
+
+* Beginners learning correct exercise posture
+* Home workout enthusiasts
+* Students exploring **Computer Vision + Fitness AI**
+
+---
+
+## 🚀 Features
+
+* 🎥 **Real-time pose detection** using webcam
+* 🔢 **Automatic rep counting**
+* 🧍 **Posture & angle validation**
+* 🏠 **No equipment exercises** (Bodyweight workouts)
+* 🖥️ **GUI-based application** using Tkinter
+* 📂 Modular & scalable project structure
+
+---
+
+## 🧠 Exercises Supported
+
+### 🦵 Legs
+
+* Squat
+* Lunge
+* Wall Sit
+* Glute Bridge
+* Calf Raise
+
+### 💪 Arms *(if added)*
+
+* Bicep Curl
+* Tricep Extension
+
+### 🧘 Shoulders *(optional / extendable)*
+
+* Arm Raises
+* Shoulder Shrugs
+
+> 🔧 You can easily add new exercises by creating a new Python file inside the `exercises/` folder.
+
+---
+
+## 🗂️ Project Structure
+
+```
+GYM-Trainer/
+│
+├── app.py                     # Main application entry point
+│
+├── gui/
+│   ├── home.py                # Body part selection screen
+│   ├── exercise_menu.py       # Exercise list screen
+│   └── workout_screen.py      # Camera + pose tracking screen
+│
+├── exercises/
+│   ├── Legs.py                # All leg exercises logic
+│   ├── Arms.py                # Arm exercises (if implemented)
+│   └── Shoulders.py           # Shoulder exercises (optional)
+│
+├── utils/
+│   ├── pose_engine.py         # Pose detection & angle calculation
+│   └── helper.py              # Utility functions
+│
+├── assets/                    # Images, icons, UI resources
+│
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation
+```
+
+---
+
+## 🛠️ Technologies Used
+
+* **Python 3.10**
+* **OpenCV** – video capture & processing
+* **MediaPipe / Custom Pose Engine** – pose estimation
+* **Tkinter** – GUI
+* **NumPy** – mathematical calculations
+
+---
+
+## 📦 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/GYM-Trainer.git
+cd GYM-Trainer
+```
+
+### 2️⃣ Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate   # On Linux/Mac
+venv\Scripts\activate      # On Windows
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run the Application
+
+```bash
+python app.py
+```
+
+---
+
+## 🎯 How It Works
+
+1. User selects **body part** (Legs / Arms / etc.)
+2. Chooses an **exercise** from the menu
+3. Webcam starts capturing video
+4. AI tracks body joints and angles
+5. Correct reps are counted automatically
+
+---
+
+## ➕ Adding a New Exercise
+
+1. Open `exercises/` folder
+2. Add a new exercise class (example: `PushUp`)
+3. Implement angle logic & rep counter
+4. Register the exercise in `EXERCISE_MAP`
+5. It will appear automatically in the GUI
+
+---
+
+## 📸 Screenshots (Optional)
+
+*Add screenshots of GUI, workout screen, and pose detection here.*
+
+---
+
+## 🧪 Future Improvements
+
+* 📊 Workout history & progress tracking
+* 🔊 Voice feedback for posture correction
+* 📱 Mobile / Web version
+* 🧠 ML-based form accuracy scoring
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## 🙌 Acknowledgements
+
+* OpenCV Community
+* MediaPipe
+* Fitness & AI open-source contributors
+
+---
+
+### ⭐ If you like this project, give it a star on GitHub!
