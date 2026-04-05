@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="main-wrapper">
+
+    <h2 class="title">AI Electronics Price Predictor</h2>
+
+    <div class="card glass">
+
+        <div class="input-group">
+            <label>Brand</label>
+            <select id="brand">
+                <option value="">Select Brand</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Category</label>
+            <select id="category">
+                <option value="">Select Category</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Customer Rating</label>
+            <input type="number" id="rating" step="0.1" placeholder="e.g. 4.5">
+        </div>
+
+        <div class="input-group">
+            <label>Discount %</label>
+            <input type="number" id="discount" placeholder="e.g. 20">
+        </div>
+
+        <div class="input-group">
+            <label>Sales Trend</label>
+            <input type="number" id="sales" placeholder="e.g. 150">
+        </div>
+
+        <div class="input-group">
+            <select id="primary"></select>
+        </div>
+
+        <div class="input-group">
+            <select id="availability"></select>
+        </div>
+
+        <div class="input-group">
+            <select id="condition"></select>
+        </div>
+
+        <div class="input-group">
+            <input type="number" id="weight" placeholder="Weight (kg)">
+        </div>
+
+        <button class="predict-btn" onclick="predictPrice()">
+            Predict Price
+        </button>
+
+        <h3 id="result" class="result-text"></h3>
+
+    </div>
+</div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+{% endblock %}

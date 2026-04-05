@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Price Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<h2>Electronic Product Price Predictor</h2>
+
+<input id="category" placeholder="Category">
+<input id="ram" type="number" placeholder="RAM">
+<input id="storage" type="number" placeholder="Storage">
+<input id="rating" type="number" step="0.1" placeholder="Rating">
+<input id="discount" type="number" placeholder="Discount %">
+<input id="sales" type="number" placeholder="Sales">
+
+<button onclick="predictPrice()">Predict</button>
+
+<h3 id="result"></h3>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

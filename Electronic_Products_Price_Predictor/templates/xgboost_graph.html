@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XGBoost Graph</title>
+    <link rel="stylesheet" href="{% static 'css/xgboost.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>XGBoost Model Implementation</h1>
+
+    <div class="definition">
+        <h2>Definition</h2>
+        <p>
+            XGBoost is an optimized Gradient Boosting algorithm
+            used for supervised machine learning problems.
+        </p>
+    </div>
+
+    <div class="comparison">
+        <h2>Model Comparison</h2>
+        <ul>
+            <li>✔ Higher Accuracy than Decision Trees</li>
+            <li>✔ Better Regularization than Random Forest</li>
+            <li>✔ Faster than traditional Gradient Boosting</li>
+        </ul>
+    </div>
+
+    <div class="result">
+        <h2>Model Accuracy: {{ accuracy }}%</h2>
+    </div>
+
+    <canvas id="importanceChart"></canvas>
+    {{ features|json_script:"features-data" }}
+    {{ importance|json_script:"importance-data" }}
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const features = JSON.parse(
+        document.getElementById("features-data").textContent
+    );
+
+    const importance = JSON.parse(
+        document.getElementById("importance-data").textContent
+    );
+
+    const ctx = document.getElementById("importanceChart").getContext("2d");
+
+    // Create Gradient
+    const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, "rgba(0, 255, 255, 0.9)");
+    gradient.addColorStop(1, "rgba(0, 100, 255, 0.6)");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: features,
+            datasets: [{
+                label: "Feature Importance (XGBoost)",
+                data: importance,
+                backgroundColor: gradient,
+                borderRadius: 10,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            animation: {
+                duration: 2000,
+                easing: "easeOutBounce"
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: "white",
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: "#222",
+                    titleColor: "#00ffff",
+                    bodyColor: "#ffffff"
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: "white"
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: "white"
+                    }
+                }
+            }
+        }
+    });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Prediction History</h2>
+<table>
+<tr>
+<th>Brand</th>
+<th>Predicted Price</th>
+<th>Date</th>
+</tr>
+
+{% for r in records %}
+<tr>
+<td>{{ r.brand }}</td>
+<td>₹{{ r.predicted_price }}</td>
+<td>{{ r.created_at }}</td>
+</tr>
+{% endfor %}
+
+</table>
+{% endblock %}
